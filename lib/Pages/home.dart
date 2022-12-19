@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/utils/Cat_box.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -64,11 +65,11 @@ class HomePage extends StatelessWidget {
 
             const SizedBox(height: 10),
 
-            // Sale Box
+            // Sale Banner
             Center(
               child: Container(
                 height: 200,
-                width: 300,
+                width: 350,
                 decoration: BoxDecoration(
                   image: const DecorationImage(
                       image: AssetImage('assets/sale_img.jpg'),
@@ -76,7 +77,20 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(35),
                 ),
               ),
-            )
+            ),
+
+            const SizedBox(height: 10),
+
+            // Categories
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                children: const [
+                  CatBox(catName: 'All'),
+                  CatBox(catName: 'Winter'),
+                ],
+              ),
+            ),
           ],
         ),
       ),
