@@ -1,4 +1,5 @@
 import 'package:ecommerce_store/utils/Cat_box.dart';
+import 'package:ecommerce_store/utils/clothes_box.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -83,14 +84,34 @@ class HomePage extends StatelessWidget {
 
             // Categories
             Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                children: const [
-                  CatBox(catName: 'All'),
-                  CatBox(catName: 'Winter'),
-                ],
+              padding: const EdgeInsets.fromLTRB(8, 10, 10, 15),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: const [
+                    CatBox(catName: 'All'),
+                    CatBox(catName: 'Winter'),
+                    CatBox(catName: 'Man'),
+                    CatBox(catName: 'Woman'),
+                    CatBox(catName: 'Sports'),
+                  ],
+                ),
               ),
             ),
+
+            // Clothes
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: const [
+                  ClothesCard(
+                    img: 'assets/clothes_01.jpg',
+                    clothesName: 'All in jorney jacket',
+                    price: '200',
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
