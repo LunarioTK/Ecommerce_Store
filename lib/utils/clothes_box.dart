@@ -25,6 +25,17 @@ class ClothesCard extends StatelessWidget {
               ),
             ),
           ),
+          child: Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              onPressed: null,
+              icon: Icon(
+                Icons.favorite_outline,
+                size: 25,
+                color: Colors.grey[600],
+              ),
+            ),
+          ),
         ),
         Text(
           clothesName,
