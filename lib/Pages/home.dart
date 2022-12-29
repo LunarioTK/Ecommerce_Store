@@ -1,7 +1,7 @@
 import 'package:ecommerce_store/models/produto.dart';
 import 'package:ecommerce_store/services/database.dart';
 import 'package:ecommerce_store/utils/Cat_box.dart';
-import 'package:ecommerce_store/utils/clothes_box.dart';
+import 'package:ecommerce_store/utils/produto_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -106,28 +106,7 @@ class HomePage extends StatelessWidget {
               ),
 
               // Clothes
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: const [
-                    ClothesCard(
-                      img: 'assets/clothes_01.jpg',
-                      clothesName: 'All in jorney jacket',
-                      price: '200',
-                    ),
-                    ClothesCard(
-                      img: 'assets/clothes_01.jpg',
-                      clothesName: 'All jorney jacket',
-                      price: '1000',
-                    ),
-                    ClothesCard(
-                      img: 'assets/clothes_01.jpg',
-                      clothesName: 'Jorney jacket',
-                      price: '500',
-                    ),
-                  ],
-                ),
-              )
+              const ProdutList()
             ],
           ),
         ),

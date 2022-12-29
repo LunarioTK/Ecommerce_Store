@@ -1,12 +1,10 @@
+import 'package:ecommerce_store/models/produto.dart';
 import 'package:flutter/material.dart';
 
 class ClothesCard extends StatelessWidget {
-  final String img, clothesName, price;
-  const ClothesCard(
-      {super.key,
-      required this.img,
-      required this.clothesName,
-      required this.price});
+  final ProdutoModel produto;
+  //final String img, clothesName, price;
+  const ClothesCard({super.key, required this.produto});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +18,8 @@ class ClothesCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(
-                img,
+              image: NetworkImage(
+                produto.imgUrl,
               ),
             ),
           ),
@@ -38,14 +36,14 @@ class ClothesCard extends StatelessWidget {
           ),
         ),
         Text(
-          clothesName,
+          produto.name,
           style: TextStyle(
             color: Colors.grey.shade600,
           ),
         ),
         const SizedBox(height: 5),
         Text(
-          '$price €',
+          '${produto.price} €',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
