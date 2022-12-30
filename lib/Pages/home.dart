@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //final productImgUrl = Provider.of<ProdutoModel>(context);
     return StreamProvider<List<ProdutoModel>?>.value(
       value: DatabaseServices(imgUrl: '').products,
       initialData: null,

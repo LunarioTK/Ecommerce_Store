@@ -47,7 +47,7 @@ class _ProdutListState extends State<ProdutList> {
             )
           : files.isEmpty
               ? const Center(
-                  child: Text('No files found'),
+                  child: Text('Sorry products available now'),
                 )
               : ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -56,6 +56,7 @@ class _ProdutListState extends State<ProdutList> {
                     return SingleChildScrollView(
                         child: ClothesCard(
                       produto: produtProvider[index],
+                      index: index,
                     ));
                   })),
     );

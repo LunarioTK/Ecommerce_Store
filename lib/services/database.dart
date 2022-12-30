@@ -4,8 +4,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 class DatabaseServices {
   late String? imgUrl;
-  late String name;
-  late String price;
+  //late String name;
+  //late String price;
 
   DatabaseServices({this.imgUrl});
 
@@ -25,7 +25,23 @@ class DatabaseServices {
     }).toList();
   }
 
+  // userData from snapshot
+  ProdutoModel _productDataFromSnapshot(DocumentSnapshot snapshot) {
+    return ProdutoModel(
+      name: snapshot.get('name') ?? '',
+      price: snapshot.get('price') ?? '',
+      imgUrl: snapshot.get('image') ?? '',
+    );
+  }
+
   Stream<List<ProdutoModel>> get products {
     return productCollection.snapshots().map(_produtoListFromSnapshot);
+  }
+
+  Stream<ProdutoModel> get onlyProducts {
+    return productCollection
+        .doc('Produto')
+        .snapshots()
+        .map(_productDataFromSnapshot);
   }
 }
